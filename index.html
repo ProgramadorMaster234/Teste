@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscrição jogo airsoft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="short icon" href="images/logo.png">
+</head>
+<body>
+
+
+    <div class="backgroundform" style="background-image: url(images/background.jpg);">
+
+  <form class="forms" method="post" action="https://sheetdb.io/api/v1/hkhe7xl77vkfe" name="inscrições" id="sheetdb-form">
+    
+    <div class="logoforms">
+
+         <img src="images/logo.png" alt="Logo">
+
+    </div>
+                    <h1>INSCRIÇÃO JOGO</h1>
+  <input type="text" name="data[Nome]" required placeholder="Nome">
+  <input type="text" name="data[Nr.Apd]" required placeholder="Nr.Apd">
+  <input type="text" name="data[Fracção]" required placeholder="Fracção">
+  <input type="text" name="data[Instagram]" required placeholder="Instagram">
+      <button type="submit" id="submit">SUBMETER</button>
+        <p style="text-align:center; color: rgb(242, 255, 0);">*Se for aceite será avisado através do Instagram*</p>
+    
+          </form>
+      </div>
+
+      <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            alert('Inscrição submetida, obrigado!')
+          });
+        });
+      </script>
+
+
+</body>
+</html>
+
